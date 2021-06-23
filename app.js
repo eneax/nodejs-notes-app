@@ -1,20 +1,15 @@
 /*
-- call `require` which is going to load the `fs module` (already built into Node)
-- the return value of calling `require` is stored into the `fs variable`
-- `fs.writeFileSync()` will write some text into a `notes.txt` file. 
-- If the file does not exist, it will be created. 
-- If the file exists, its text content will be overwritten by the new provided message.
+- All the files in Node.js have their own scope with their own variables
+- `app.js` cannot access the variable `name` defined inside `utils.js` (even if utils was loaded with `require`)
+- If we want to use the content of a file inside another file, we need to explicitly export the content from a file
+- We can export content using `modules.exports` and import it in another file using `require`
 */
 
-const fs = require('fs')
+// const firstName = require('./utils')
 
-// fs.writeFileSync('notes.txt', 'My name is Enea.')
+// console.log(firstName)
 
-//
-// Challenge: Append a message to notes.txt
-//
-// 1. Use appendFileSync to append to the file
-// 2. Run the script
-// 3. Check your work by opening the file and viewing the appended text
+const add = require('./utils')
 
-fs.appendFileSync('notes.txt', '\nMy last name is Xharja.')
+const sum = add(1, 1)
+console.log(sum)
