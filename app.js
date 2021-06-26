@@ -1,12 +1,21 @@
-const validator = require('validator')
-
+const chalk = require('chalk')
 const getNotes = require('./notes')
 
 const msg = getNotes()
 console.log(msg)
 
-console.log(validator.isEmail('enea@example.com'))
-console.log(validator.isEmail('@example.com'))
+//
+// Use the chalk library in your project
+//
+// 1. Install the version 2.4.1 of chalk
+// 2. Load chalk into your app
+// 3. Use it to print the string "Success!" to the console in green
+// 4. Test your work
 
-console.log(validator.isURL('https://eneaxharja.com'))
-console.log(validator.isURL('https/eneaxharja.com'))
+// Bonus: Use the docs to mess around with other styles. Make text bold and inverted.
+
+const greenMsg = chalk.green('Success!')
+console.log('greenMsg', greenMsg)
+
+const greenBoldInvertedMsg = chalk.green.inverse.bold('Success!')
+console.log('greenBoldInvertedMsg', greenBoldInvertedMsg)
