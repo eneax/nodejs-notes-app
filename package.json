@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/eneax/nodejs-notes-app#readme",
   "dependencies": {
+    "@types/yargs": "^17.0.1",
     "chalk": "^2.4.1",
     "validator": "^10.8.0",
     "yargs": "^12.0.2"
