@@ -1,4 +1,6 @@
 // ! JSON Playground
+// JSON --> it's a string representation of what looks like a JS object or array
+
 const fs = require('fs')
 
 // JS object
@@ -34,3 +36,21 @@ const fs = require('fs')
 // 2. Change the name and age property using your info
 // 3. Stringify the changed object and overwrite the original data
 // 4. Test your work by viewing data in the JSON file
+
+// * Solution
+
+// Read file from system
+const dataBuffer = fs.readFileSync('playground/01-json.json')
+// Convert buffer to JSON string
+const dataJSON = dataBuffer.toString()
+// Convert JSON string to JS object
+const user = JSON.parse(dataJSON)
+
+// Change name and age property
+user.name = 'Enea'
+user.age = 99
+
+// Convert JS object to JSON string
+const userJSON = JSON.stringify(user)
+// Write data to filesystem overwriting the original data
+fs.writeFileSync('playground/01-json.json', userJSON)
