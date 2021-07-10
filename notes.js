@@ -28,12 +28,23 @@ const saveNotes = function (notes) {
 const addNote = function (title, body) {
   const notes = loadNotes()
 
-  notes.push({
-    title: title,
-    body: body,
+  // filter runs for every item in the array
+  const duplicateNotes = notes.filter(function (note) {
+    return note.title === title
   })
 
-  saveNotes(notes)
+  // check for duplicate notes
+  if (duplicateNotes.length === 0) {
+    notes.push({
+      title: title,
+      body: body,
+    })
+
+    saveNotes(notes)
+    console.log('New note added!')
+  } else {
+    console.log('Note title taken!')
+  }
 }
 
 module.exports = {
