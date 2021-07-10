@@ -43,6 +43,11 @@ const addNote = function (title, body) {
   }
 }
 
+const removeNote = function (title) {
+  console.log('Removing note: ', title)
+}
+
 module.exports = {
   addNote: addNote,
+  removeNote: removeNote,
 }
