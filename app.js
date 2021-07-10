@@ -1,6 +1,6 @@
 const yargs = require('yargs')
 
-const { getNotes, addNote } = require('./notes')
+const { addNote } = require('./notes')
 
 // Customize yargs version
 yargs.version('1.1.0')

@@ -1,9 +1,5 @@
 const fs = require('fs')
 
-const getNotes = function () {
-  return 'Your notes...'
-}
-
 const loadNotes = function () {
   try {
     // load existing notes
@@ -48,6 +44,5 @@ const addNote = function (title, body) {
 }
 
 module.exports = {
-  getNotes: getNotes,
   addNote: addNote,
 }
