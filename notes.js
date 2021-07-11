@@ -25,11 +25,10 @@ const saveNotes = (notes) => {
 const addNote = (title, body) => {
   const notes = loadNotes()
 
-  // filter runs for every item in the array
-  const duplicateNotes = notes.filter((note) => note.title === title)
-
   // check for duplicate notes
-  if (duplicateNotes.length === 0) {
+  const duplicateNote = notes.find((note) => note.title === title)
+
+  if (!duplicateNote) {
     notes.push({
       title: title,
       body: body,
